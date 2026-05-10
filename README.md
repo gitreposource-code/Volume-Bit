@@ -1,59 +1,39 @@
-# Raydium-Volume-Market-Maker
+# Pumpfun voume and market maker bot 
 
-TypeScript scaffold for a Solana Raydium market-making bot with:
+This is script that optimize market making process by automatic buy and sell, boost token volume. This control trading chart by configuring buy/sell amount and timestamps, so can draw health chart. This is for giving basic understanding about volume bot and market maker. Feel free to reach out of me when you need full script and custom requirement[Telegram: https://t.me/DevCutup, Whatsapp: https://wa.me/13137423660].
 
-- SPL token creation command
-- Strategy loop with configurable buy/sell amount and speed
-- Adapter architecture for Raydium `CLMM`, `CPMM`, `AMM`, and `LaunchLab`
-- Gather command to sweep SOL to treasury
-- Dry-run mode for safe testing
+## Functionality
 
-## Install
+1. Volume boost
+
+2. Market making
+
+3. Automated buy/sell
+
+4. Manual sell option 
+
+5. Gather and close LUT account
+
+## How to run it
 
 ```bash
+# Clone the repository
+git clone https://github.com/cutupdev/Pumpfun-Volume-Market-Maker-Bot.git
+
+# Navigate to project directory
+cd Pumpfun-Volume-Market-Maker-Bot
+
+# Install dependencies
 npm install
+
+# Configure environment variables
+# Create a .env file with your settings (see .env.example Setup section)
+
+# Start the application
+npm run start
 ```
 
-## Environment
-
-Create `.env` in project root:
-
-```bash
-RPC_URL=https://api.mainnet-beta.solana.com
-PRIVATE_KEY=[1,2,3,...]
-TREASURY_PUBLIC_KEY=
-DRY_RUN=true
-DEFAULT_SLIPPAGE_BPS=100
-BUY_AMOUNT_UI=10
-SELL_AMOUNT_UI=10
-BUY_INTERVAL_MS=12000
-SELL_INTERVAL_MS=12000
-MAX_POSITION_UI=100000
-MIN_BASE_RESERVE_UI=0
-```
-
-## Commands
-
-Create token:
-
-```bash
-npm run dev -- create-token --decimals 6 --initial-supply 1000000
-```
-
-Run bot:
-
-```bash
-npm run dev -- run-bot --pool-id <POOL_ID> --kind clmm --base-mint <BASE_MINT> --quote-mint <QUOTE_MINT>
-```
-
-Gather:
-
-```bash
-npm run dev -- gather
-```
-
-## Notes
-
-- `DRY_RUN=true` returns simulated swap signatures.
-- Swap execution and pool pricing in adapters are scaffolds; wire the Raydium SDK/API in `src/raydium/adapter.ts` for live trading.
-- Use only in markets where your activity complies with local laws and exchange rules.
+### Contacts
+- Telegram: https://t.me/DevCutup
+- Whatsapp: https://wa.me/13137423660
+- Twitter:  https://x.com/devcutup
